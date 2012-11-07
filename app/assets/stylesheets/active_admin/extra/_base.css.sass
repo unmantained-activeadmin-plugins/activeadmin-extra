@@ -1,0 +1,55 @@
+$secondary-color: white
+$header-color: #003B88
+$current-menu-item-background: lighten($header-color, 12%)
+$hover-menu-item-background: lighten($header-color, 12%)
+
+@import "active_admin/mixins"
+@import "active_admin/extra/partials"
+
++global-reset
+
+body.active_admin
+
+  #wrapper > .flashes
+    max-width: 1280px
+    margin: 0 auto
+
+    .flash
+      top: 0
+
+  #header
+    +gradient(lighten($header-color, 5%), darken($header-color, 7%))
+
+  #title_bar
+    max-width: 1280px
+    margin: 0 auto
+
+  #active_admin_content
+    max-width: 1280px
+    margin: 0 auto
+    float: none
+
+  form fieldset.inputs
+    legend span
+      font-size: 17px
+      line-height: 17px
+      font-weight: normal
+      padding: 9px 10px
+
+    fieldset.inputs
+      margin: 0px 10px
+
+    ol >
+      li.input
+        &> label
+          width: 19%
+          margin-right: 1%
+          text-align: right
+          line-height: 32px
+
+        &.boolean > label
+          text-align: left
+          line-height: auto
+
+        &.number input
+          width: 65px
