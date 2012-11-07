@@ -10,6 +10,13 @@ $hover-menu-item-background: lighten($header-color, 12%)
 
 body.active_admin
 
+  #wrapper > .flashes
+    max-width: 1280px
+    margin: 0 auto
+
+    .flash
+      top: 0
+
   #header
     +gradient(lighten($header-color, 5%), darken($header-color, 7%))
 
@@ -17,7 +24,7 @@ body.active_admin
     max-width: 1280px
     margin: 0 auto
 
-  #active_admin_content #main_content_wrapper
+  #active_admin_content
     max-width: 1280px
     margin: 0 auto
     float: none
