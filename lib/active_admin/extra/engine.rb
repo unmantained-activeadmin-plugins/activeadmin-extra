@@ -1,3 +1,5 @@
+require 'active_admin'
+
 module ActiveAdmin
   module Extra
 
