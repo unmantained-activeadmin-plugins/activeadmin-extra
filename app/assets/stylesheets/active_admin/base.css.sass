@@ -4,9 +4,12 @@ $current-menu-item-background: lighten($header-color, 12%)
 $hover-menu-item-background: lighten($header-color, 12%)
 
 @import "active_admin/mixins"
-@import "active_admin/base"
+@import "active_admin/partials"
+
++global-reset
 
 body.active_admin
+
   #header
     +gradient(lighten($header-color, 5%), darken($header-color, 7%))
 
