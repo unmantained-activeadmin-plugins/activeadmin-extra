@@ -1,0 +1,24 @@
+= default-button
+  +basic-button
+  +gradient(lighten($header-color, 5%), darken($header-color, 12%))
+  +text-shadow(#000)
+  +box-shadow(0 1px 1px rgba(0,0,0,0.10), 0 1px 0 0px rgba(255,255,255, 0.2) inset)
+  border: solid 1px #484e53
+  +border-colors(lighten($header-color, 6%), darken($header-color, 10%), darken($header-color, 16%))
+  color: $menu-color
+
+  &:not(.disabled)
+    &:hover
+      +gradient(lighten($header-color, 10%), darken($header-color, 9%))
+
+    &:active
+      +box-shadow(0 1px 3px rgba(0,0,0,0.40) inset, 0 1px 0 0px #FFF)
+      +gradient(lighten($header-color, 8%), darken($header-color, 17%))
+
+= menu-header
+  +gradient(lighten($header-color, 5%), darken($header-color, 12%))
+  +box-shadow(0 1px 1px rgba(0,0,0,0.10), 0 1px 0 0px rgba(255,255,255, 0.2) inset)
+  border: solid 1px #484e53
+  +border-colors(lighten($header-color, 6%), darken($header-color, 10%), darken($header-color, 16%))
+  color: $menu-color
+  +text-shadow(black)

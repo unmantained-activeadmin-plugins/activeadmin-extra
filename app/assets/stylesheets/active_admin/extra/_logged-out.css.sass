@@ -1,0 +1,18 @@
+body.active_admin.logged_out
+
+  h2
+    font-size: 1.4em
+    padding: 15px
+    font-weight: normal
+    +gradient(lighten($header-color, 5%), darken($header-color, 7%))
+
+  #login form fieldset
+    label
+      width: 18%
+
+    input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="url"], input[type="tel"], textarea
+      width: 100% - 19%
+
+    ol > li.input.boolean > label
+      padding-left: 19%
+      width: auto
