@@ -14,18 +14,7 @@ body.active_admin
 
   @import "wrap"
   @import "form"
-
-  #header
-    +gradient(lighten($header-color, 3%), darken($header-color, 8%))
-    border-bottom: 1px solid darken($header-color, 15%)
-
-    h1
-      color: $menu-color
-
-    a, a:link
-      color: $menu-color
-
-    #utility_nav
-      color: $menu-color
+  @import "panel"
+  @import "header"
 
 @import "logged-out"

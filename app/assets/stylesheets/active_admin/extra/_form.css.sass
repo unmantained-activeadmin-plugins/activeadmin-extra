@@ -1,11 +1,23 @@
 form
 
-  fieldset ol > li
-    label
-      width: 10%
+  h3
+    font-size: 24px
+    line-height: 24px
 
-    fieldset ol
-      padding-left: 11%
+  input[type="radio"]
+    display: inline-block
+    margin-right: 5px !important
+
+  fieldset
+    &:last-child
+      margin-bottom: 0
+
+    ol > li
+      label
+        width: 10%
+
+      fieldset ol
+        padding-left: 11%
 
   fieldset.inputs
     padding: 10px
@@ -14,7 +26,7 @@ form
       font-size: 17px
       line-height: 17px
       font-weight: normal
-      padding: 9px 10px
+      padding: 8px 9px
       margin: 0px -10px
       +menu-header
 
@@ -93,4 +105,29 @@ form
         div.has_many h3
           font-size: 17px
           font-weight: normal
+
+#main_content > form
+  fieldset.actions
+    position: fixed
+    bottom: 0
+    left: 0
+    right: 0
+    z-index: 10
+    +gradient(rgba(black, 0.9), rgba(black, 0.8))
+    border-top: 1px solid black
+    padding: 20px
+
+    ol
+      +clearfix
+
+    input[type="submit"], li.cancel a
+      font-size: 17px
+      font-weight: normal
+      vertical-align: middle
+
+    input[type="submit"]
+      float: left
+
+    li.cancel
+      float: right
 
