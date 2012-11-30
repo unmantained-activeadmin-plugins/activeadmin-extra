@@ -22,6 +22,16 @@ form
       fieldset ol
         padding-left: 11%
 
+  fieldset > ol > li fieldset > ol > li
+    padding: 10px
+
+  fieldset ol > li fieldset > ol
+    padding-left: 0
+    width: 100%
+
+  .inputs > legend
+    display: none
+
   fieldset.inputs
     padding: 10px
 
@@ -70,6 +80,19 @@ form
             font-size: 19px
             padding: 7px
 
+        &.radio
+          fieldset.choices
+            ol.choices-group
+              padding-left: 11%
+
+              li.choice
+                margin: 0
+                padding: 0
+                margin-bottom: 10px
+
+                &:last-child
+                  margin-bottom: 0
+
         &.slug .url-composer
           +box-sizing(border-box)
           display: inline-block
@@ -110,6 +133,7 @@ form
           font-weight: normal
 
 #main_content > form
+
   fieldset.actions
     position: fixed
     bottom: 0
