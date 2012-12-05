@@ -100,38 +100,6 @@ form
                 &:last-child
                   margin-bottom: 0
 
-        &.slug .url-composer
-          +box-sizing(border-box)
-          display: inline-block
-          background: white
-          width: 100% - 11%
-          border: 1px solid #c9d0d6
-          @include rounded
-          font-size: 0.95em
-          @include sans-family
-          outline: none
-          padding: 7px $text-input-horizontal-padding 5px
-          +clearfix
-
-          &:focus
-            border: 1px solid #99a2aa
-            @include shadow(0,0,4px,#99a2aa)
-
-          .url-prefix
-            float: left
-            font-size: 14px
-            color: #777
-
-          input[type="text"]
-            width: auto
-            border-width: 0
-            background-color: transparent
-            padding: 0
-
-            &:focus
-              border-width: 0
-              +no-shadow
-
         &.number input
           width: 65px
 
