@@ -1,77 +1,66 @@
-# Active Admin Gallery
+# Active Admin Extra
 
 ## Description
 
-With activeadmin-gallery, you are able to DRY up your models and freely associate images and galleries to your models.
+Extra candies for your ActiveAdmin apps.
 
 ## Installation
 
-Add `activeadmin-gallery` to your Gemfile:
+Add `activeadmin-extra` to your Gemfile:
 
 ```ruby
-   gem 'activeadmin-gallery', github: 'stefanoverna/activeadmin-gallery'
+   gem 'activeadmin-extra', github: 'stefanoverna/activeadmin-extra'
 ```
 
-Run the generator that will create the images table, and migrate.
+Import the stylesheets in your assets
 
+```sass
+   @import "active_admin/extra/base"
 ```
-> rake activeadmin_gallery:install:migrations
-> rake db:migrate
-```
 
-## Gallery usage
 
-Suppose you want a Page model with an image gallery. In `app/models/page.rb`:
+## Custom inputs usage
+
+Spice up your admin forms with these brand new inputs:
+
+### Title
+
+String field with a larger font.
 
 ```ruby
-class Page < ActiveRecord::Base
-  has_many_images :album_images
-end
+   ActiveAdmin.register Page do
+
+     form do |f|
+       f.input :name, :as => :title
+     end
+
+   end
 ```
 
-No migrations, no models. That's all you need.
+### Numbers set
 
-In your ActiveAdmin config file:
+A row of numeric inputs side by side. Basic usage:
 
 ```ruby
-ActiveAdmin.register Page do
+   ActiveAdmin.register Box do
 
-  form do |f|
-    # ...
-    f.inputs :gallery do
-      f.has_many_images :album_images
-    end
-    # ...
-  end
+     form do |f|
+       f.input :height, :as => :numbers_set # default displays a height_min and a height_max field
+     end
 
-end
+   end
 ```
 
-## Single image usage
-
-Suppose you want a Page model with a single image. Edit `app/models/page.rb`
+Multiple options:
 
 ```ruby
-class Page < ActiveRecord::Base
-  has_image :featured_image
-end
-```
+   ActiveAdmin.register Box do
 
-No migrations, no models. That's all you need.
-In your ActiveAdmin config file:
+     form do |f|
+       f.input :height, :as => :numbers_set, :numbers_set => [:mm, :in, :ft]
+     end
 
-```ruby
-ActiveAdmin.register Page do
-
-  form do |f|
-    # ...
-    f.inputs :image do
-      f.has_image :featured_image
-    end
-    # ...
-  end
-
-end
+   end
 ```
 
 ## Copyright
