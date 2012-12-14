@@ -5,10 +5,13 @@ module Formtastic
       def to_html
         options[:numbers_set] ||= [:min, :max]
         input_wrapping do
-          label_html << options[:numbers_set].map do |n|
-            field = "%s_#{n.to_s.parameterize('_')}" % method
-            builder.number_field(field, input_html_options) << " #{n.to_s}"
-          end.join(" - ").html_safe << " #{options[:symbol]}"
+          label_html <<
+            template.content_tag(:span) do
+              options[:numbers_set].map do |n|
+                field = "%s_#{n.to_s.parameterize('_')}" % method
+                builder.number_field(field, input_html_options) << " #{n.to_s}"
+              end.join(" - ").html_safe << " #{options[:symbol]}"
+            end
         end
       end
     end
