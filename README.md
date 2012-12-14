@@ -37,6 +37,21 @@ String field with a larger font.
    end
 ```
 
+### Measure
+
+Number with unit of measure symbol
+
+```ruby
+   ActiveAdmin.register Product do
+
+     form do |f|
+       f.input :price, :as => :measure, :symbol => '€'
+     end
+
+   end
+```
+
+
 ### Numbers set
 
 A row of numeric inputs side by side. Basic usage:
