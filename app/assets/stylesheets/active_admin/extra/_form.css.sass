@@ -54,6 +54,25 @@ form
       li.input
         +clearfix
 
+        select.chosen-input
+          width: 80%
+
+        .chzn-container
+          input[type="text"]
+            +box-sizing(content-box)
+            padding: 5px
+
+            &:focus
+              box-shadow: none
+
+        .chzn-container-multi .chzn-choices
+          border: 1px solid #c9d0d6
+          border-radius: 3px
+
+        .chzn-container-active .chzn-choices
+          border: 1px solid #99a2aa
+          +box-shadow(0 0 4px #99a2aa)
+
         input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="url"], input[type="tel"], textarea
           +box-sizing(border-box)
           width: 100% - 11%
@@ -156,3 +175,4 @@ form
   table.ui-datepicker-calendar
     thead th
       padding: 4px 0
+
