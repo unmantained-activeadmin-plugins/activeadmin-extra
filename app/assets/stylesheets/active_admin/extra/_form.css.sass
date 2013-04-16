@@ -54,24 +54,52 @@ form
       li.input
         +clearfix
 
-        select.chosen-input
-          width: 80%
+        &.terms
+          ul.ui-widget-content
+            position: absolute
+            top: 0
+            left: 0
+            cursor: default
+            border: 1px solid #99a2aa
+            +box-shadow(0 0 4px #99a2aa)
+            background: white
+            list-style-type: none
+            margin: 0
+            padding: 0
 
-        .chzn-container
-          input[type="text"]
-            +box-sizing(content-box)
-            padding: 5px
+            .ui-menu-item
+              a
+                display: block
+                text-decoration: none
+                padding: 5px 6px
+                color: #333
 
-            &:focus
-              box-shadow: none
+                &.ui-state-focus, &.ui-state-active
+                  +linear-gradient(#3875D7, #2A62BC)
+                  color: white
 
-        .chzn-container-multi .chzn-choices
-          border: 1px solid #c9d0d6
-          border-radius: 3px
+          .ui-helper-hidden, .ui-helper-hidden-accessible
+            display: none
 
-        .chzn-container-active .chzn-choices
-          border: 1px solid #99a2aa
-          +box-shadow(0 0 4px #99a2aa)
+        &.chosen
+          select.chosen-input
+            width: 80%
+
+          .chzn-container
+            input[type="text"]
+              +box-sizing(content-box)
+              padding: 5px
+
+              &:focus
+                box-shadow: none
+
+          .chzn-container-multi .chzn-choices
+            border: 1px solid #c9d0d6
+            border-radius: 3px
+
+          .chzn-container-active .chzn-choices
+            border: 1px solid #99a2aa
+            +box-shadow(0 0 4px #99a2aa)
 
         input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="url"], input[type="tel"], textarea
           +box-sizing(border-box)
