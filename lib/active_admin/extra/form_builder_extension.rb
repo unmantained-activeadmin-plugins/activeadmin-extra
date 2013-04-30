@@ -64,6 +64,12 @@ module ActiveAdmin
         form_buffers.last
       end
 
+      def errors
+        inputs I18n.t('active_admin.errors'), class: "flash flash_error" do
+          object.errors.full_messages.map { |e| "<li>#{e}</li>"}.join.html_safe
+        end if object.errors.any?
+      end
+
       module ClassMethods
       end
     end
