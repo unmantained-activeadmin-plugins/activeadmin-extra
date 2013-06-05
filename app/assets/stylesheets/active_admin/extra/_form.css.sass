@@ -95,6 +95,15 @@ form
             width: 80%
 
           .chzn-container
+            .chzn-drop
+              left: -9999px
+            &.chzn-with-drop .chzn-drop
+              left: 0
+
+            > a
+              text-decoration: none
+              color: black
+
             input[type="text"]
               +box-sizing(content-box)
               padding: 5px

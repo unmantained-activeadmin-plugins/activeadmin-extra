@@ -66,13 +66,13 @@ Usage:
    ActiveAdmin.register Product do
 
      form do |f|
-       f.input :material, as: :chosen, :collection => Product::MATERIALS, input_html: {create_options: true}
+       f.input :material, as: :chosen, create_option: true
      end
 
    end
 ```
 
-For the create_options alternative use [koenpunt's fork](https://github.com/koenpunt/chosen).
+For the create_option alternative use [koenpunt's fork](https://github.com/koenpunt/chosen).
 
 
 ### Measure

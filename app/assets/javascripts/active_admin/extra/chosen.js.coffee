@@ -1,3 +1,6 @@
 $ ->
-  if $(".chosen-input").length > 0
-    $(".chosen-input").chosen()
+  if jQuery().chosen
+    $(".chosen-input").each ->
+      $this = $(@)
+      $this.chosen
+        create_option: !!$this.data('create-option')
