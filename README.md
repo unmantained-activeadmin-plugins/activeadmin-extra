@@ -12,10 +12,14 @@ Add `activeadmin-extra` to your Gemfile:
    gem 'activeadmin-extra', github: 'stefanoverna/activeadmin-extra'
 ```
 
-Import the stylesheets in your assets
+Replace active_admin stylesheets and javascripts with:
 
 ```sass
    @import "active_admin/extra/base"
+```
+
+```coffee
+   #= require active_admin/extra
 ```
 
 
@@ -36,6 +40,40 @@ String field with a larger font.
 
    end
 ```
+
+
+### Chosen
+
+The infamous jquery combobox. To use add to your Gemfile:
+
+```ruby
+   gem 'chosen-rails', group: :assets
+```
+
+and then in your assets:
+
+```coffee
+   #= require chosen-jquery
+```
+
+```sass
+   @import "chosen"
+```
+
+Usage:
+
+```ruby
+   ActiveAdmin.register Product do
+
+     form do |f|
+       f.input :material, as: :chosen, :collection => Product::MATERIALS, input_html: {create_options: true}
+     end
+
+   end
+```
+
+For the create_options alternative use [koenpunt's fork](https://github.com/koenpunt/chosen).
+
 
 ### Measure
 
