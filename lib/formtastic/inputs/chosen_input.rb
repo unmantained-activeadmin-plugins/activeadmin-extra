@@ -4,11 +4,9 @@ module Formtastic
     class ChosenInput < Formtastic::Inputs::SelectInput
       def input_html_options
         new_class = [super[:class], "chosen-input"].compact.join(" ")
-        super.merge(:class => new_class,
-                    data: {
-                      placeholder: options[:placeholder],
-                      create_option: options[:create_option]
-                    })
+        data = {create_option: options[:create_option]}
+        data[:placeholder] = options[:placeholder] if options[:placeholder]
+        super.merge(:class => new_class, data: data)
       end
     end
 
