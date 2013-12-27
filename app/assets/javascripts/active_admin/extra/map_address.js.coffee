@@ -39,6 +39,8 @@ $ ->
       geocoder.geocode 'address': address, (results, status) ->
         if status == google.maps.GeocoderStatus.OK
           placeMarker(results[0].geometry.location)
+        else if $this.data('alert-on-error')
+          alert('Error! Address not found')
       false
 
     if $lat.val() && $lon.val()
