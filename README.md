@@ -116,6 +116,39 @@ Multiple options:
    end
 ```
 
+### Google Map Address
+
+A simple way to find lat, lon in google map. Basic usage:
+
+Requires the following in config/initializers/active_admin.rb
+
+```ruby
+	ActiveAdmin.application.register_javascript "https://maps.googleapis.com/maps/api/js?sensor=false"
+```
+
+Add [address] (or any other name), latitude end longitude string column to your model via migration
+
+```ruby
+  def change
+    add_column :apartments, :address, :string
+    add_column :apartments, :latitude, :string
+    add_column :apartments, :longitude, :string
+  end
+```
+
+Configure your active admin model file
+
+```ruby
+  /app/admin/apartement.rb
+
+  form do |f|
+    f.inputs :logistic do
+      f.input :address, as: :map_address
+    end
+  end
+```
+
+
 ## Copyright
 
 Copyright (c) 2012 Stefano Verna, Cantiere Creativo
